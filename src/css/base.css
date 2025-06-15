@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+#main-split-screen {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+#main-split-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.section-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.875rem;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  margin: 0.5rem;
+  overflow: hidden;
+  transition: width 0.5s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.section-background-1 {
+  background-image: url('../img/task1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.section-background-2 {
+  background-image: url('../img/task2.jpg');
+  background-size: cover;
+  background-position: left;
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+.section-link:hover .section-overlay {
+  opacity: 0.1;
+}
+
+.section-text {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+}
+
+.section-text:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.content-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.content-page.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: black;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  opacity: 0.8;
+}

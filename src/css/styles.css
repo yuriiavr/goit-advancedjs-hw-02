@@ -1,0 +1,10 @@
+/**
+  |============================
+  | include css partials with
+  | default @import url()
+  |============================
+*/
+/* Common styles */
+@import url('./base.css');
+@import url('./1-timer.css');
+@import url('./2-snackbar.css');
